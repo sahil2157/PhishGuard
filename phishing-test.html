@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <title>Security Verification Required</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #eef1f5;
+      color: #202124;
+    }
+
+    .alert {
+      background: #b91c1c;
+      color: white;
+      padding: 16px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .container {
+      width: min(430px, 92%);
+      margin: 55px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0,0,0,.15);
+    }
+
+    .brand {
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .urgent {
+      color: #b91c1c;
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 13px;
+      border: 0;
+      border-radius: 6px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .small {
+      color: #666;
+      font-size: 12px;
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    .hidden-marker {
+      display: none;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="alert">
+    🚨 SECURITY ALERT — IMMEDIATE ACTION REQUIRED
+  </div>
+
+  <main class="container">
+
+    <div class="brand">
+      Account Security Center
+    </div>
+
+    <p class="urgent">
+      Your account has been suspended.
+    </p>
+
+    <p>
+      We detected unusual activity on your account.
+      Please verify your account immediately.
+    </p>
+
+    <p>
+      Confirm your identity to prevent permanent
+      suspension.
+    </p>
+
+    <form id="simulationForm">
+
+      <label for="email">
+        Email address
+      </label>
+
+      <input
+        id="email"
+        name="email"
+        type="email"
+        autocomplete="off"
+        placeholder="test@example.test"
+        required
+      >
+
+      <label for="password">
+        Password
+      </label>
+
+      <input
+        id="password"
+        name="password"
+        type="password"
+        autocomplete="off"
+        placeholder="Test password"
+        required
+      >
+
+      <label for="otp">
+        OTP / Verification Code
+      </label>
+
+      <input
+        id="otp"
+        name="otp"
+        type="text"
+        autocomplete="off"
+        placeholder="Test verification code"
+      >
+
+      <button type="submit">
+        Verify Account
+      </button>
+
+    </form>
+
+    <p class="small">
+      ⚠️ Verify within 10 minutes or your account
+      may be permanently suspended.
+    </p>
+
+    <p class="small">
+      Security Support · Click here
+    </p>
+
+    <!-- Deliberate test signal -->
+    <div class="hidden-marker">
+      phishing-test suspicious-login credential-verification
+    </div>
+
+  </main>
+
+  <script>
+
+    document
+      .getElementById("simulationForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        alert(
+          "PHISHING SIMULATION\n\n" +
+          "PhishGuard should identify this page " +
+          "as HIGH risk.\n\n" +
+          "No information was transmitted."
+        );
+      });
+
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "PhishGuard - Real-Time Phishing Detector",
+  "version": "4.1",
+  "description": "Educational phishing detection extension.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
+
